@@ -1,0 +1,12 @@
+mở server của laravel
+php artisan serve
+
+Tạo controller 
+php artisan make:controller <Tên controller>
+
+Tạo form request
+php artisan make:request <tên from request>
+
+
+Tạo migration
+php artisan make:migration create_<tên migration>
