@@ -24,8 +24,8 @@ class EditProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'code'=>'required|max:10',
-            'name'=>'required',
+            'code'=>'required|max:10|unique:product,code,'.$this->prd_id.',id',
+            'name'=>'required|min:3|unique:product,name,'.$this->prd_id.',id',
             'price'=>'required|numeric',
             
             'img'=>'image',
@@ -37,7 +37,10 @@ class EditProductRequest extends FormRequest
         return[
           'code.required'=>'không được để trống mã sản phẩm',
           'code.max'=>'mã sản phâm không quá 10 kí tự',
+          'code.unique'=>'Mã sản phẩm đã tồn tại',
           'name.required'=>'không được để trống tên sản phẩm',
+          'name.min'=>'Tên sản phẩm lớn hơn 3 kí tự',
+          'name.unique'=>'Tên sản phẩm đã tồn tại',
           'price.required'=>'không được để trống giá sản phẩm',
           'price.numeric'=>'Giá sản phẩm phải là dạng số',
          

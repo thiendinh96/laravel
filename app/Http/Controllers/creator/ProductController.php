@@ -8,8 +8,10 @@ use App\models\{product,category};
 
 class ProductController extends Controller
 {
-    function GetDetail(){
-        return view('creator.product.detail');
+    function GetDetail($slug_prd){
+        $data['prd']=product::where("slug",$slug_prd)->first();
+        $data['prd_new']=product::orderby('id','desc')->take(4)->get();
+        return view('creator.product.detail',$data);
     }
     
     function GetShop(){

@@ -35,7 +35,7 @@ class CategoryController extends Controller
       $data['categorys']=category::all()->toarray();
        return view('admin.category.editcategory',$data);
     }
-    function PostEditCategory(EditCategoryrequest $r,$cate_id){
+    function PostEditCategory(EditCategoryRequest $r,$cate_id){
         $name=$r->name;
         $parent=$r->parent;
         $cate=category::find($cate_id);

@@ -14,16 +14,16 @@
 	
 											<div class="cart">
 												<p>
-													<span class="addtocart"><a href="cart.html"><i
+													<span class="addtocart"><a href="/cart/add/?id_prd={{$row->id}}"><i
 																class="icon-shopping-cart"></i></a></span>
-													<span><a href="detail.html"><i class="icon-eye"></i></a></span>
+													<span><a href="/product/{{$row->slug}}.html"><i class="icon-eye"></i></a></span>
 	
 	
 												</p>
 											</div>
 										</div>
 										<div class="desc">
-											<h3><a href="detail.html">{{$row->name}}</a></h3>
+											<h3><a href="/product/{{$row->slug}}.html">{{$row->name}}</a></h3>
 											<p class="price"><span>{{number_format($row->price,0,"",".")}} đ</span></p>
 										</div>
 									</div>

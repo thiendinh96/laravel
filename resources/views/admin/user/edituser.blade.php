@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>password</label>
-                                    <input type="text" name="password" class="form-control" value="">
+                                    <input type="text" name="password" class="form-control" value="{{$user->password}}">
                                     {{ShowError($errors,'password')}}
                                 </div>
                                 <div class="form-group">

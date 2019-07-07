@@ -346,16 +346,21 @@ Route::get('filter', 'creator\HomeController@GetFilter');
 
     Route::group(['prefix' => 'cart'], function () {
         Route::get('','creator\CartController@GetCart');
+        Route::get('add','creator\CartController@AddCart');
+        Route::get('update/{rowId}/{qty}','creator\CartController@UpdateCart');
+        Route::get('del/{rowId}','creator\CartController@DelCart');
+
     });
 
     Route::group(['prefix' => 'checkout'], function () {
         Route::get('','creator\CheckOutController@GetCheckout');
-        Route::get('complete','creator\CheckOutController@GetComplete');
+        Route::post('','creator\CheckOutController@PostCheckout');
+        Route::get('complete/{order_id}','creator\CheckOutController@GetComplete');
     });
 
     Route::group(['prefix' => 'product'], function () {
         Route::get('shop','creator\ProductController@GetShop');
-        Route::get('detail', 'creator\ProductController@GetDetail');
+        Route::get('{slug_prd}.html', 'creator\ProductController@GetDetail');
     });
 
 
